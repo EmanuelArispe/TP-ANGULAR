@@ -1,0 +1,33 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th>Imagen</th>
+            <th>Nombre</th>
+            <th>Tipo</th>
+            <th>Precio</th>
+            <th>Stock</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for(bulon of bulones; track bulon.id){
+        <tr [ngClass]="{'clearence' : (bulon.clearance && bulon.stock>0)}">
+            <td><img class="rounded" [src]="bulon.image" [alt]="bulon.name"></td>
+            <td>{{bulon.name}}</td>
+            <td>{{bulon.type}}</td>
+            <td>{{bulon.price | currency}}</td>
+            @if(bulon.stock >0){
+                <td>
+                    {{bulon.stock}}
+                </td>
+            }
+            @else{ 
+                <td class="badge text-bg-warning">Sin Stock</td>
+            }
+        </tr>
+    }@empty {
+        <tr>
+            <td colspan="4">No hay bulones para mostrar</td>
+        </tr>
+    }
+    </tbody>
+</table>

@@ -16,6 +16,7 @@ export class ToolsListComponent {
     stock: 150,
     image: './t-pasoFino.jpg',
     clearance: true,
+    quantity: 0,
   },
   {
     id: 2,
@@ -25,6 +26,7 @@ export class ToolsListComponent {
     stock: 0,
     image: './t-pasoFino.jpg',
     clearance: true,
+    quantity: 0,
   },
   {
     id: 3,
@@ -34,6 +36,24 @@ export class ToolsListComponent {
     stock: 150,
     image: './t-pasoFino.jpg',
     clearance: false,
+    quantity: 0,
   }
 ];
+
+upQuantity(bulon: Tools): void{
+  if(bulon.quantity < bulon.stock)
+  bulon.quantity++;
+}
+
+downQuantity(bulon: Tools): void{
+  if(bulon.quantity > 0)
+  bulon.quantity--;
+}
+
+changeQuantity(event: any, bulon : Tools): void{
+  if(event.key > '9'){
+    bulon.quantity = 0;
+  }
+}
+
 }

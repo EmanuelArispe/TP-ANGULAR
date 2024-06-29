@@ -26,11 +26,9 @@
                 <td class="badge text-bg-warning">Sin Stock</td>
             }
             <td>
-                <div class="input-group">
-                <button class="btn btn-dark btn-sm"(click)= "downQuantity(bulon)"> - </button>
-                    <input class="input-compra" type="text" [(ngModel)]="bulon.quantity" (keyup)="changeQuantity($event, bulon)">
-                <button class="btn btn-dark btn-sm" (click)= "upQuantity(bulon)"> + </button>
-                </div>
+                @if(bulon.stock){
+                    <app-input-number [(quantity)] = "bulon.quantity" [max] = "bulon.stock" (maxReached)="maxReached($event)"></app-input-number>
+                }
             </td>
         </tr>
     }@empty {

@@ -9,13 +9,15 @@ import { FormsModule } from '@angular/forms';
 import { ToolsAboutComponent } from './tools-about/tools-about.component';
 import { ToolsCompraComponent } from './tools-compra/tools-compra.component';
 import { ToolsCartComponent } from './tools-cart/tools-cart.component';
+import { InputNumberComponent } from './input-number/input-number.component';
 @NgModule({
   declarations: [
     AppComponent,
     ToolsListComponent,
     ToolsAboutComponent,
     ToolsCompraComponent,
-    ToolsCartComponent
+    ToolsCartComponent,
+    InputNumberComponent
   ],
   imports: [
     BrowserModule,

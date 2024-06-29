@@ -40,20 +40,9 @@ export class ToolsListComponent {
   }
 ];
 
-upQuantity(bulon: Tools): void{
-  if(bulon.quantity < bulon.stock)
-  bulon.quantity++;
-}
 
-downQuantity(bulon: Tools): void{
-  if(bulon.quantity > 0)
-  bulon.quantity--;
-}
-
-changeQuantity(event: any, bulon : Tools): void{
-  if(event.key > '9'){
-    bulon.quantity = 0;
-  }
+maxReached(m: string):void{
+  alert(m);
 }
 
 }

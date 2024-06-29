@@ -6,10 +6,16 @@ import { AppComponent } from './app.component';
 import { ToolsListComponent } from './tools-list/tools-list.component';
 
 import { FormsModule } from '@angular/forms';
+import { ToolsAboutComponent } from './tools-about/tools-about.component';
+import { ToolsCompraComponent } from './tools-compra/tools-compra.component';
+import { ToolsCartComponent } from './tools-cart/tools-cart.component';
 @NgModule({
   declarations: [
     AppComponent,
-    ToolsListComponent
+    ToolsListComponent,
+    ToolsAboutComponent,
+    ToolsCompraComponent,
+    ToolsCartComponent
   ],
   imports: [
     BrowserModule,

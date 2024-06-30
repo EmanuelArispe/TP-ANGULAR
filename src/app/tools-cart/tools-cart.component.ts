@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ToolsCartService } from '../tools-cart.service';
+import { ToolsCartService } from '../service/tools-cart.service';
 import { Tools } from '../tools-list/Tools';
 import { Observable } from 'rxjs';
 

@@ -10,6 +10,8 @@ import { ToolsAboutComponent } from './tools-about/tools-about.component';
 import { ToolsCompraComponent } from './tools-compra/tools-compra.component';
 import { ToolsCartComponent } from './tools-cart/tools-cart.component';
 import { InputNumberComponent } from './input-number/input-number.component';
+import { HttpClient } from '@angular/common/http';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +24,8 @@ import { InputNumberComponent } from './input-number/input-number.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClient
   ],
   providers: [],
   bootstrap: [AppComponent]

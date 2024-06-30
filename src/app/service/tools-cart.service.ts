@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Tools } from './tools-list/Tools';
+import { Tools } from '../tools-list/Tools';
 import { BehaviorSubject } from 'rxjs';
 
 @Injectable({

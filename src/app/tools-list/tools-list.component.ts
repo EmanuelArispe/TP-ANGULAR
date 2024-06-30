@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Tools } from './Tools';
-import { ToolsCartService } from '../tools-cart.service';
+import { ToolsCartService } from '../service/tools-cart.service';
+import { ToolDataService } from '../service/tool-data.service';
 
 @Component({
   selector: 'app-tools-list',
@@ -10,42 +11,18 @@ import { ToolsCartService } from '../tools-cart.service';
 export class ToolsListComponent {
 
 
-  constructor(private cart: ToolsCartService){
+  constructor(private cart: ToolsCartService, 
+              private toolsDataService: ToolDataService){
   }
 
-  bulones: Tools[] =[ {
-    id: 1,
-    name:'Tornillo',
-    type: 'Paso fino',
-    price: 400,
-    stock: 4,
-    image: './t-pasoFino.jpg',
-    clearance: true,
-    quantity: 0,
-  },
-  {
-    id: 2,
-    name:'Arandela',
-    type: 'Grove',
-    price: 10,
-    stock: 0,
-    image: './t-pasoFino.jpg',
-    clearance: true,
-    quantity: 0,
-  },
-  {
-    id: 3,
-    name:'Remache',
-    type: '30 mm',
-    price: 15,
-    stock: 5,
-    image: './t-pasoFino.jpg',
-    clearance: false,
-    quantity: 0,
+  bulones: Tools[] = [];
+
+
+  ngOnInit():void{
+    this.toolsDataService.getAll()
+    .subscribe(tools => this.bulones = tools);
   }
-];
-
-
+  
 maxReached(m: string):void{
   alert(m);
 }

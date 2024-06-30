@@ -7,7 +7,8 @@
             <th>Tipo</th>
             <th>Precio</th>
             <th>Stock</th>
-            <th>Compra</th>
+            <th>Cantidad</th>
+            <th>Comprar</th>
         </tr>
     </thead>
     <tbody>
@@ -25,11 +26,16 @@
             @else{ 
                 <td class="badge text-bg-warning">Sin Stock</td>
             }
-            <td>
+            
                 @if(bulon.stock){
-                    <app-input-number [(quantity)] = "bulon.quantity" [max] = "bulon.stock" (maxReached)="maxReached($event)"></app-input-number>
+                    <td>
+                        <app-input-number [(quantity)] = "bulon.quantity" [max] = "bulon.stock" (maxReached)="maxReached($event)"></app-input-number>
+                    </td>
+                    <td>
+                        <button class="btn btn-outline-success" (click)="addToCart(bulon)">Comprar</button>
+                    </td>
+
                 }
-            </td>
         </tr>
     }@empty {
         <tr>

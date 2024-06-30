@@ -1,1 +1,7 @@
 <h3>Carrito de Compras</h3>
+
+<ul>
+    @for(bulon of cartList$ | async; track bulon.id){
+        <li>{{bulon.name}} - {{bulon.quantity}}</li>
+    }
+</ul>

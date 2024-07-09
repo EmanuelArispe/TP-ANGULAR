@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable, tap } from 'rxjs';
 import { Tools } from '../tools-list/Tools';
 
-const URL = 'https://66819b3404acc3545a07276d.mockapi.io/api/v1/article';
+const URL = 'https://66819b3404acc3545a07276d.mockapi.io/api/v1/Article';
 
 @Injectable({
   providedIn: 'root'

@@ -1,5 +1,5 @@
 <h3> Lista de Bulones </h3>
-<table class="table">
+<table class="table align-middle table-hover">
     <thead>
         <tr>
             <th>Imagen</th>
@@ -13,11 +13,11 @@
     </thead>
     <tbody>
         @for(bulon of bulones; track bulon.id){
-        <tr [ngClass]="{'clearence' : (bulon.clearance && bulon.stock>0)}">
+        <tr>
             <td><img class="img-list img-thumbnail" [src]="bulon.image" [alt]="bulon.name"></td>
             <td>{{bulon.name}}</td>
             <td>{{bulon.type}}</td>
-            <td>{{bulon.price | currency}}</td>
+            <td [ngClass]="{'clearence' : (bulon.clearance && bulon.stock>0)}">{{bulon.price | currency}}</td>
             @if(bulon.stock >0){
                 <td>
                     {{bulon.stock}}

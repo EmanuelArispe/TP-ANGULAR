@@ -13,15 +13,18 @@ export class ToolsCartService {
   constructor() { }
 
   addToCart(bulon: Tools) {
-    let item: Tools | undefined = this._cartList.find((v1)=> v1.name == bulon.name);
+    let item: Tools | undefined = this._cartList.find((v1)=> v1.id == bulon.id);
     if(!item) {
       this._cartList.push({...bulon});
     }else{
       item.quantity += bulon.quantity;
     }
-    console.log(this._cartList);
     this.cartList.next(this._cartList);
   }
 
+ removeAllToCart(){
+this._cartList = [];
+this.cartList.next(this._cartList);
+ }
 
 }

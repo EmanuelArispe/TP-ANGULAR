@@ -1,7 +1,27 @@
 <h3>Carrito de Compras</h3>
-
-<ul>
-    @for(bulon of cartList$ | async; track bulon.id){
-        <li>{{bulon.name}} - {{bulon.quantity}}</li>
-    }
-</ul>
+<table class="table">
+    <thead>
+        <th>Nombre</th>
+        <th>Tipo</th>
+        <th>Precio</th>
+        <th>Cantidad</th>
+        <th></th>
+    </thead>
+    <tbody>
+        @for(bulon of cartList$ | async; track bulon.id){
+            <tr>
+                <td>{{bulon.name}}</td>
+                <td>{{bulon.type}}</td>
+                <td>{{bulon.price | currency}}</td>
+                <td>{{bulon.quantity}}</td>
+            </tr>
+        }
+    </tbody>
+    <tfoot>
+        <tr>
+            <td>Total: {{sumaTotal() | currency}}</td>
+            <td><button type="button" class="btn sm btn-primary" (click)="finalyShop()">Comprar</button></td>
+            <td><button type="button" class="btn sm btn-warning" (click)="removeAll()">Descartar</button></td>
+        </tr>
+    </tfoot>
+</table>

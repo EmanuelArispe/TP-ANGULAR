@@ -1,4 +1,10 @@
-# Ferreteria
+# Ferreteria - Bulonera
+
+En este caso solamente cargue items de Buloneria pero se podria cargar items de Herramientas y/o de Ferreteria para que se vean reflejados en el listado de productos.
+
+
+## Arispe Perez Emanuel - DNI: 35418187 - 
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.5.
 
